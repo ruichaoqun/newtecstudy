@@ -1,1 +1,18 @@
-# newtecstudy
+# 使用Material Design设计风格，由于是个人项目，使用了大量热门技术，比如retrofit2网络加载框架，picasso图片加载框架，fresco图片加载框架，Rxjava+retrofit，Rxbinding等
+
+采用Material Design设计风格，使用recyclerview显示列表，SwipeRefreshLayout下拉刷新,CardView显示列表item,CoordinatorLayout控制滑动联动,CollapsingToolbarLayout实现可伸展的Toolbar等
+
+三种RecyclerView 的布局：线性，网格，瀑布流。
+
+采用Rxjava+retrofit的网络加载框架，更好的处理网络请求的嵌套
+使用fresco图片加载框架，添加图片加载占位动画，设置重新加载，图片处理等
+使用Rxbinding框架注解方式获取控件并处理控件异步调用
+
+实现 CoordinatorLayout 和WebView 的双层滑动。在WebView 外面嵌套一层NestedScrollView。
+
+仿知乎首页FloatingActionButton设计方式，自定义Behavior并设计覆盖层
+
+使用了一些属性动画
+整体架构采用模板方法模式，父类控制代码结构，子类实现。部分具有相同功能的再提供给父类实现
+例如：BaseRecyclerFregment是所有具有下拉刷新的Fragment的父类
+RecyclerViewAdapter继承自RecyclerView.Adapter，实现了OnItemClickListener接口，可以直接通过setOnitemClikListener设置item点击事件，其他比如数据绑定，holeder获取等交于它的子类实现
